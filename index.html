@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>《天工开物》多维数据整合平台</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+        }
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;  /* 两列布局（左侧2/3，右侧1/3） */
+            grid-gap: 20px;
+        }
+        /* 模块公共样式 */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        /* 左侧主区域 */
+        .main-area {
+            grid-column: 1 / 2;
+            display: grid;
+            grid-template-rows: auto auto;  /* 上下两部分 */
+            grid-gap: 20px;
+        }
+        /* 右侧边栏 */
+        .sidebar {
+            grid-column: 2 / 3;
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-gap: 20px;
+        }
+        /* 自适应调整 */
+        @media (max-width: 1200px) {
+            .dashboard {
+                grid-template-columns: 1fr;  /* 小屏幕单列布局 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 30px;">《天工开物》术语多维分析平台</h1>
+
+    <div class="dashboard">
+        <!-- 左侧主区域 -->
+        <div class="main-area">
+            <!-- 时间轴（调整到上半部分） -->
+            <div class="card">
+                <h2>术语时间轴</h2>
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/22713002"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22713002/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+            </div>
+
+            <!-- 关系网络（调整到下半部分） -->
+            <div class="card">
+                <h2>术语多维关系网</h2>
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/22719698"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22719698/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+            </div>
+        </div>
+
+        <!-- 右侧边栏 -->
+        <div class="sidebar">
+            <!-- 地理分布（右侧上方） -->
+            <div class="card">
+                <h2>地理分布</h2>
+                <div class="flourish-embed flourish-network" data-src="visualisation/22717915"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22717915/thumbnail" width="100%" alt="network visualization" /></noscript></div>
+            </div>
+
+            <!-- 统计摘要（右侧下方，可选） -->
+            <div class="card">
+                <h2>关键统计</h2>
+                <div id="stats" style="padding: 15px;">
+                    <p>核心术语数量: <span id="term-count">55</span></p >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+</body>
+</html>
